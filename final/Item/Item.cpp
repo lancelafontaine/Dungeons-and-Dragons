@@ -31,6 +31,8 @@ Item::Item()
 Item::Item(string type_name, vector<Enhancement> influences, string nameofitem)
 {
 	name = nameofitem;
+	this->weapontype = "";
+
 	
 	// ***todo***: this constructor should verify that an new item of a certain type only
 	//check to see if item creation is of legal type
@@ -43,6 +45,33 @@ Item::Item(string type_name, vector<Enhancement> influences, string nameofitem)
 	// enhances a character statistic valid for this item type
 	type = type_name;
 	influence = influences;
+}
+
+Item::Item(string type_name, vector<Enhancement> influences, string nameofitem, string weapontypee)
+{
+
+
+	name = nameofitem;
+	this->weapontype = weapontypee;
+
+
+
+	// ***todo***: this constructor should verify that an new item of a certain type only
+	//check to see if item creation is of legal type
+	if (!(this->validateItemType(type_name)))
+	{
+		cout << type_name << " is not a valid item type.";
+		exit(1);
+	}
+
+	// enhances a character statistic valid for this item type
+	type = type_name;
+	influence = influences;
+
+
+
+
+
 }
 
 //! method to get the type of the item

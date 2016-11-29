@@ -37,6 +37,8 @@ public:
 	Item();
 	// Constructor
 	Item(string type,vector<Enhancement> influences , string name);
+	//constructor for a weapon
+	Item(string type, vector<Enhancement> influences, string name, string weapontype);
 	// method to get the type of the item
 	string getType();
 	// method to get name
@@ -71,6 +73,7 @@ private:
 	string type;
 	vector<Enhancement> influence;
 	string name;
+	string weapontype;
 };
 #endif
 
